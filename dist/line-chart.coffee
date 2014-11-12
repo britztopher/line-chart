@@ -1218,8 +1218,8 @@ mod.factory('n3utils', ['$window', '$log', '$rootScope', ($window, $log, $rootSc
       showScrubber: (svg, glass, axes, data, options, columnWidth) ->
         that = this
         glass.on('mousemove', ->
-        value = Math.round(axes.xScale.invert(d3.mouse(this)[0]))
-        $rootScope.$broadcast('updateOtherGraph', data, value)
+          value = Math.round(axes.xScale.invert(d3.mouse(this)[0]))
+          $rootScope.$broadcast('updateOtherGraph', data, value)
           svg.selectAll('.glass-container').attr('opacity', 1)
           that.updateScrubber(svg, d3.mouse(this), axes, data, options, columnWidth)
         )
