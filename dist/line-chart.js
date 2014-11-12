@@ -1,6 +1,6 @@
 
 /*
-line-chart - v1.1.4 - 10 November 2014
+line-chart - v1.1.4 - 12 November 2014
 https://github.com/n3-charts/line-chart
 Copyright (c) 2014 n3-charts
  */
@@ -1309,12 +1309,9 @@ mod.factory('n3utils', [
         });
       },
       showScrubber: function(svg, glass, axes, data, options, columnWidth) {
-        var that;
+        var that, value;
         that = this;
-        glass.on('mousemove', function() {
-          svg.selectAll('.glass-container').attr('opacity', 1);
-          return that.updateScrubber(svg, d3.mouse(this), axes, data, options, columnWidth);
-        });
+        glass.on('mousemove', function() {}, value = Math.round(axes.xScale.invert(d3.mouse(this)[0])), $rootScope.$broadcast('updateOtherGraph', data, value), svg.selectAll('.glass-container').attr('opacity', 1), that.updateScrubber(svg, d3.mouse(this), axes, data, options, columnWidth));
         return glass.on('mouseout', function() {
           glass.on('mousemove', null);
           return svg.selectAll('.glass-container').attr('opacity', 0);

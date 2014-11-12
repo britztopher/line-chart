@@ -40,7 +40,7 @@ module.exports = function(grunt) {
       unminified: {
         singleRun: true,
         autoWatch: false,
-        browsers: ['Firefox'],
+        browsers: ['Firefox', 'Chrome'],
         options: {
           files: [
             'bower_components/angular/angular.js',
@@ -59,7 +59,7 @@ module.exports = function(grunt) {
       minified: {
         singleRun: true,
         autoWatch: false,
-        browsers: ['Firefox'],
+        browsers: ['Firefox', 'Chrome'],
         options: {
           files: [
             'bower_components/angular/angular.js',
